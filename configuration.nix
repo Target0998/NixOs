@@ -81,6 +81,9 @@
     fastfetch
     btop
 
+    # Fonts
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
     # Claude Code
     claude-code
   ];

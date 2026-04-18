@@ -17,6 +17,8 @@
 
     "modules-right": [
         "custom/sep",
+        "battery",
+        "custom/sep",
         "network",
         "custom/sep",
         "cpu",
