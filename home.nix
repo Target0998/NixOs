@@ -47,7 +47,7 @@
     enable = true;
     addKeysToAgent = "yes";
     extraConfig = ''
-      IdentityFile ~/.ssh/ed-225519
+      IdentityFile ~/.ssh/id-ed225519
     '';
   };
 
