@@ -37,6 +37,7 @@
     extraConfig = ''
       syntax on
       set incsearch
+      colorscheme desert
     '';
   };
 
