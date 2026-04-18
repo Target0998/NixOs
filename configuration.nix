@@ -55,7 +55,7 @@
     hyprlock
     swww
     waypaper
-    rofi-wayland
+    rofi
     swaynotificationcenter
     wl-clipboard
     cliphist
