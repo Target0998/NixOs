@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -17,33 +17,71 @@
   services.getty.autologinUser = "superonov";
 
   programs.hyprland = {
-  	enable = true;
-	xwayland.enable = true;
+    enable = true;
+    xwayland.enable = true;
   };
 
+  security.polkit.enable = true;
+
   users.users.superonov = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ];
-     packages = with pkgs; [
-       tree
-     ];
-   };
+    isNormalUser = true;
+    extraGroups = [ "wheel" "video" "audio" ];
+    packages = with pkgs; [
+      tree
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
-     vim
-     wget
-     vlc
-     brave
-     git
-     kitty
-     foot
-     waybar
-     hyprpaper
-   ];
+    # Editors
+    vim
+    neovim
 
+    # Core utilities
+    wget
+    git
+    jq
 
- nix.settings.experimental-features = [ "nix-command" "flakes"];
- system.stateVersion = "25.11"; # Did you read the comment?
+    # Browser
+    brave
 
+    # Terminal emulators
+    kitty
+    foot
+
+    # Wayland / Hyprland ecosystem
+    waybar
+    hyprpaper
+    hypridle
+    hyprlock
+    swww
+    waypaper
+    rofi-wayland
+    swaynotificationcenter
+    wl-clipboard
+    cliphist
+
+    # Screenshots
+    grim
+    slurp
+
+    # System controls
+    brightnessctl
+    playerctl
+
+    # Polkit agent
+    polkit_gnome
+
+    # Cursor theme
+    bibata-cursors
+
+    # Media
+    vlc
+
+    # System tools
+    fastfetch
+    btop
+  ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  system.stateVersion = "25.11";
 }
-
