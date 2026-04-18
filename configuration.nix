@@ -82,7 +82,7 @@
     btop
 
     # Fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
 
     # Claude Code
     claude-code
