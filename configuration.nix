@@ -80,6 +80,9 @@
     # System tools
     fastfetch
     btop
+
+    # Claude Code
+    claude-code
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
